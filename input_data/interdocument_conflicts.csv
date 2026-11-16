@@ -1,0 +1,108 @@
+IF TMP_Sensor > 210 °C THEN STOP IN ST02_SEALING; SP_002_AlarmThresholds
+IF TMP_Sensor > 210 °C THEN STOP IN ST02_SEALING; RULE-ST02-02
+IF E-STOP THEN Inspect_ST02_SEALING; SP_002_AlarmThresholds
+IF TMP_Sensor > 200 °C THEN accelerated thermocouple ageing AND ±5°C acruracy failure in measurment IN ST02_SEALING; DS_Thermal_Sensors
+IF TMP_Sensor between 175 °C and 195 °C THEN operational IN ST02_SEALING; RULE-ST02-01
+
+IF TMP_Sensor < 210 °C THEN operational IN ST02_SEALING; SP_002_AlarmThresholds
+IF TMP_Sensor < 200 °C THEN operational IN ST02_SEALING; DS_Thermal_Sensors
+IF TMP_Sensor < 195 °C THEN operational IN ST02_SEALING; RULE-ST02-01
+
+IF PRS_Sensor < 3.8 ± 0.05 bar THEN operational IN ST01_FILLING; SP_002_AlarmThresholds
+IF PRS_Sensor < 3.7 bar THEN operational IN ST01_FILLING; DS_Mechanical_Sensors
+IF PRS_Sensor < 3.3 bar THEN Inspect_INLET_VALVE IN ST01_FILLING; RULE-ST01-03
+
+
+IF CUR_Sensor > 14 THEN E-STOP AND Inspect_Load AND Verify_ST04_PACKAGING-SPD; SP_002_AlarmThresholds
+IF CUR_Sensor > 15 THEN E-STOP AND Inspect_Load AND Verify_ST04_PACKAGING-SPD; DS_Electrical_Sensors
+
+
+
+
+IF TMP_Sensor > 210 °C THEN E-STOP IN ST02_SEALING; SP_002_AlarmThresholds
+IF TMP_Sensor > 210 °C THEN STOP IN ST02_SEALING; RULE-ST02-02
+
+IF TMP_Sensor < 200 °C (must not exceed) THEN operational IN ST02_SEALING; DS_Thermal_Sensors
+IF TMP_Sensor < 195 °C THEN operational IN ST02_SEALING; RULE-ST02-01
+
+IF TMP_Sensor < 210 °C THEN operational IN ST02_SEALING; SP_002_AlarmThresholds
+IF TMP_Sensor < 200 °C (must not exceed) THEN operational IN ST02_SEALING; DS_Thermal_Sensors
+
+IF CUR_Sensor > 14 THEN E-STOP AND Inspect_Load AND Verify_ST04_PACKAGING-SPD; SP_002_AlarmThresholds
+IF CUR_Sensor > 15 THEN E-STOP AND Inspect_Load AND Verify_ST04_PACKAGING-SPD; DS_Electrical_Sensors
+
+IF TMP_Sensor > 200 °C THEN accelerated thermocouple ageing AND ±5°C acruracy failure in measurment IN ST02_SEALING; DS_Thermal_Sensors
+IF TMP_Sensor > 200 °C THEN operational IN ST02_SEALING; SP_002_AlarmThresholds
+
+IF PRS_Sensor < 3.8 ± 0.05 bar THEN operational IN ST01_FILLING; SP_002_AlarmThresholds
+IF PRS_Sensor < 3.7 bar THEN operational IN ST01_FILLING; DS_Mechanical_Sensors
+IF PRS_Sensor < 3.3 bar THEN Inspect_INLET_VALVE IN ST01_FILLING; RULE-ST01-03
+
+
+
+
+IF E-STOP THEN Inspect_ST02_SEALING; SP_002_AlarmThresholds
+IF TMP_Sensor > 200 °C THEN accelerated thermocouple ageing AND ±5°C acruracy failure in measurment IN ST02_SEALING; DS_Thermal_Sensors
+IF TMP_Sensor between 175 °C and 195 °C THEN operational IN ST02_SEALING; RULE-ST02-01
+
+IF TMP_Sensor < 210 °C THEN operational IN ST02_SEALING; SP_002_AlarmThresholds
+IF TMP_Sensor < 200 °C (must not exceed) THEN operational IN ST02_SEALING; DS_Thermal_Sensors
+IF TMP_Sensor < 195 °C THEN operational IN ST02_SEALING; RULE-ST02-01
+
+IF PRS_Sensor < 3.8 ± 0.05 bar THEN operational IN ST01_FILLING; SP_002_AlarmThresholds
+IF PRS_Sensor < 3.7 bar THEN operational IN ST01_FILLING; DS_Mechanical_Sensors
+IF PRS_Sensor < 3.3 bar THEN Inspect_INLET_VALVE IN ST01_FILLING; RULE-ST01-03
+
+IF CUR_Sensor > 14 THEN E-STOP AND Inspect_Load AND Verify_ST04_PACKAGING-SPD; SP_002_AlarmThresholds
+IF CUR_Sensor > 15 THEN E-STOP AND Inspect_Load AND Verify_ST04_PACKAGING-SPD; DS_Electrical_Sensors
+
+IF start 
+
+
+
+{"original": "The process end is a direct successor of HBW_1_Store.", "formalization": "IF HBW_1_Store THEN end", "category": "process_flow", "timestamp": "2026-11-08T14:59:36.919794", "source": "expert input"}
+
+
+
+IF TMP_Sensor > 210 °C THEN E-STOP IN ST02_SEALING; SP_002_AlarmThresholds
+IF TMP_Sensor > 210 °C THEN STOP IN ST02_SEALING; RULE-ST02-02
+
+IF TMP_Sensor < 200 °C (must not exceed) THEN operational IN ST02_SEALING; DS_Thermal_Sensors
+IF TMP_Sensor < 195 °C THEN operational IN ST02_SEALING; RULE-ST02-01
+
+IF TMP_Sensor < 210 °C THEN operational IN ST02_SEALING; SP_002_AlarmThresholds
+IF TMP_Sensor < 200 °C (must not exceed) THEN operational IN ST02_SEALING; DS_Thermal_Sensors
+
+IF CUR_Sensor > 14 THEN E-STOP AND Inspect_Load AND Verify_ST04_PACKAGING-SPD; SP_002_AlarmThresholds
+IF CUR_Sensor > 15 THEN E-STOP AND Inspect_Load AND Verify_ST04_PACKAGING-SPD; DS_Electrical_Sensors
+
+IF TMP_Sensor > 200 °C THEN accelerated thermocouple ageing AND ±5°C acruracy failure in measurment IN ST02_SEALING; DS_Thermal_Sensors
+IF TMP_Sensor > 200 °C THEN operational IN ST02_SEALING; SP_002_AlarmThresholds
+
+IF PRS_Sensor < 3.8 ± 0.05 bar THEN operational IN ST01_FILLING; SP_002_AlarmThresholds
+IF PRS_Sensor < 3.7 bar THEN operational IN ST01_FILLING; DS_Mechanical_Sensors
+IF PRS_Sensor < 3.3 bar THEN Inspect_INLET_VALVE IN ST01_FILLING; RULE-ST01-03
+
+
+
+
+IF E-STOP THEN Inspect_ST02_SEALING; SP_002_AlarmThresholds
+IF TMP_Sensor > 200 °C THEN accelerated thermocouple ageing AND ±5°C acruracy failure in measurment IN ST02_SEALING; DS_Thermal_Sensors
+IF TMP_Sensor between 175 °C and 195 °C THEN operational IN ST02_SEALING; RULE-ST02-01
+
+IF TMP_Sensor < 210 °C THEN operational IN ST02_SEALING; SP_002_AlarmThresholds
+IF TMP_Sensor < 200 °C (must not exceed) THEN operational IN ST02_SEALING; DS_Thermal_Sensors
+IF TMP_Sensor < 195 °C THEN operational IN ST02_SEALING; RULE-ST02-01
+
+IF PRS_Sensor < 3.8 ± 0.05 bar THEN operational IN ST01_FILLING; SP_002_AlarmThresholds
+IF PRS_Sensor < 3.7 bar THEN operational IN ST01_FILLING; DS_Mechanical_Sensors
+IF PRS_Sensor < 3.3 bar THEN Inspect_INLET_VALVE IN ST01_FILLING; RULE-ST01-03
+
+IF CUR_Sensor > 14 THEN E-STOP AND Inspect_Load AND Verify_ST04_PACKAGING-SPD; SP_002_AlarmThresholds
+IF CUR_Sensor > 15 THEN E-STOP AND Inspect_Load AND Verify_ST04_PACKAGING-SPD; DS_Electrical_Sensors
+
+IF start 
+
+
+
+

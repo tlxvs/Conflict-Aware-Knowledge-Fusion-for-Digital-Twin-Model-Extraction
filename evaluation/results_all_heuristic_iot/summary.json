@@ -1,0 +1,67 @@
+{
+  "rules": 232,
+  "backend": "heuristic",
+  "smt": "z3",
+  "labels": "manual judgement (not expert-reviewed)",
+  "pdf_rules_vs_ground_truth": {
+    "statements_checked": 113,
+    "aligned": 113
+  },
+  "classification": {
+    "pairs_expected": 141,
+    "tp": 124,
+    "fn": 17,
+    "fp_labelled_valid": 12,
+    "valid_pairs_labelled": 132,
+    "fp_unlabelled_pairs": 0,
+    "fp_pairs_of_pdf_rules": 0,
+    "precision": 0.9117647058823529,
+    "recall": 0.8794326241134752,
+    "f1": 0.8953068592057761,
+    "category_accuracy_given_detected": 0.9112903225806451,
+    "severity_accuracy_given_detected": 0.9758064516129032,
+    "per_label": {
+      "Diverging Outcome / conflict": {
+        "n": 54,
+        "recall": 0.9629629629629629
+      },
+      "Diverging Outcome / potential conflict": {
+        "n": 15,
+        "recall": 0.6666666666666666
+      },
+      "Diverging Precondition / conflict": {
+        "n": 41,
+        "recall": 0.9024390243902439
+      },
+      "Diverging Precondition / observation": {
+        "n": 15,
+        "recall": 0.8
+      },
+      "Diverging Precondition / potential conflict": {
+        "n": 16,
+        "recall": 0.8125
+      }
+    }
+  },
+  "recommendation": {
+    "clusters": 49,
+    "with_ground_truth": 49,
+    "decided": 19,
+    "correct": 13,
+    "wrong": 6,
+    "abstain": 30,
+    "coverage": 0.3877551020408163,
+    "precision_when_decided": 0.6842105263157895,
+    "accuracy": 0.2653061224489796,
+    "correct_lenient": 13,
+    "precision_when_decided_lenient": 0.6842105263157895,
+    "accuracy_lenient": 0.2653061224489796,
+    "criteria_in_decisions": {
+      "source_corroboration": 13,
+      "prudent_or_specific": 13,
+      "fewer_classifications": 1
+    },
+    "iot_criterion": "active: 86400 log rows from C:\\Users\\rc3000\\Desktop\\KIT SYDSEN\\Papers\\Fusion and Cross-Validation Paper\\Conflict Detection and Resolution\\approach\\timeseries_annotated.csv; 52 of 232 rules scored, 0 reach the 0.20 support threshold",
+    "expert_decisions_given": 0
+  }
+}

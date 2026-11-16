@@ -1,0 +1,60 @@
+{
+  "rules": 232,
+  "backend": "nli",
+  "smt": "z3",
+  "labels": "manual judgement (not expert-reviewed)",
+  "pdf_rules_vs_ground_truth": {
+    "statements_checked": 113,
+    "aligned": 113
+  },
+  "classification": {
+    "pairs_expected": 141,
+    "tp": 134,
+    "fn": 7,
+    "fp_labelled_valid": 75,
+    "valid_pairs_labelled": 132,
+    "fp_unlabelled_pairs": 0,
+    "fp_pairs_of_pdf_rules": 0,
+    "precision": 0.6411483253588517,
+    "recall": 0.950354609929078,
+    "f1": 0.7657142857142857,
+    "category_accuracy_given_detected": 0.9104477611940298,
+    "severity_accuracy_given_detected": 0.9776119402985075,
+    "per_label": {
+      "Diverging Outcome / conflict": {
+        "n": 54,
+        "recall": 1.0
+      },
+      "Diverging Outcome / potential conflict": {
+        "n": 15,
+        "recall": 1.0
+      },
+      "Diverging Precondition / conflict": {
+        "n": 41,
+        "recall": 0.926829268292683
+      },
+      "Diverging Precondition / observation": {
+        "n": 15,
+        "recall": 0.8
+      },
+      "Diverging Precondition / potential conflict": {
+        "n": 16,
+        "recall": 0.9375
+      }
+    }
+  },
+  "recommendation": {
+    "clusters": 45,
+    "with_ground_truth": 42,
+    "decided": 14,
+    "correct": 11,
+    "wrong": 3,
+    "abstain": 28,
+    "coverage": 0.3333333333333333,
+    "precision_when_decided": 0.7857142857142857,
+    "accuracy": 0.2619047619047619,
+    "correct_lenient": 12,
+    "precision_when_decided_lenient": 0.8571428571428571,
+    "accuracy_lenient": 0.2857142857142857
+  }
+}

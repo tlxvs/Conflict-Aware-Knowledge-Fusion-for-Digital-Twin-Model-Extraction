@@ -1,0 +1,22 @@
+cluster,members,status,decided_by,recommended_keep,must_keep_confirmed,must_remove_contradicted,kept_a_contradicted_rule,removed_a_confirmed_rule,gt_rules,verdict,verdict_lenient
+1,1; 105; 2001; 2021,recommendation_available,source_corroboration,1; 105; 2021,1; 105,2001,,,RULE-ST01-01; RULE-THR-ST01-FLW-CRIT,correct,correct
+2,3; 2012; 2027,pending,,,3,2012,,,RULE-ST01-03,abstain,abstain
+3,8; 115; 2037; 3023,pending,,,8; 115,2037; 3023,,,RULE-ST03-01; RULE-THR-ST03-TEN-CRIT,abstain,abstain
+4,15; 125; 2038,pending,,,15; 125,2038,,,RULE-SRV01-01; RULE-THR-SRV01-TMP-CRIT,abstain,abstain
+5,25; 2009; 2035,pending,,,25,2009,,,RULE-ACCESS-04; RULE-CHM01-03,abstain,abstain
+6,114; 3035,pending,,,114,,,,RULE-THR-ST03-SPD-CRIT,abstain,abstain
+7,127; 3022,pending,,,127,3022,,,RULE-THR-SRV01-HUM-CRIT,abstain,abstain
+8,137; 2006,pending,,,137,2006,,,RULE-THR-RND01-TMP-CRIT,abstain,abstain
+9,138; 3036,pending,,,138,,,,RULE-THR-RND01-TMP-CRIT,abstain,abstain
+10,142; 3033,pending,,,142,,,,RULE-THR-CAF01-TMP-CRIT,abstain,abstain
+11,143; 3024,pending,,,143,3024,,,RULE-THR-CAF01-HUM-CRIT,abstain,abstain
+12,144; 3034,pending,,,144,,,,RULE-THR-CAF01-HUM-CRIT,abstain,abstain
+13,145; 3040,pending,,,145,,,,RULE-ANOM-SPIKE,abstain,abstain
+14,147; 3047,pending,,,147,,,,RULE-ANOM-STUCK,abstain,abstain
+15,161; 3039; 3050,recommendation_available,source_corroboration,161; 3050,161,,,,RULE-CORR-02,correct,correct
+16,163; 3038,pending,,,163,,,,RULE-CORR-03,abstain,abstain
+17,179; 3018; 3037,recommendation_available,source_corroboration,3018; 3037,179,3018,3018,179,RULE-ACCESS-02,wrong,wrong
+18,183; 3007; 3043,recommendation_available,"source_corroboration, prudent_or_specific",183; 3043,183,3007,,,RULE-ACK-OP-CRIT,correct,correct
+19,185; 3010,pending,,,185,3010,,,RULE-ACK-TECH-CRIT,abstain,abstain
+20,187; 3008,pending,,,187,3008,,,RULE-ACK-SUP-CRIT,abstain,abstain
+21,2004,pending,,,,2004,,,RULE-THR-ST04-VIB-CRIT,abstain,abstain

@@ -1,0 +1,114 @@
+statement_id,source,gt_rules,formalization,numbers_in_statement,numbers_not_in_ground_truth,aligned
+1,"SOP_001_OperatingProcedures.pdf, RULE-ST01-01",RULE-ST01-01,IF FLW between 112 and 128 L/min THEN MUST be maintained IN ST01_FILLING,"[112.0, 128.0]",[],True
+2,"SOP_001_OperatingProcedures.pdf, RULE-ST01-02",RULE-ST01-02,IF TMP exceeds 26°C THEN reduce speed by 10% and notify QC IN ST01_FILLING,"[10.0, 26.0]",[],True
+3,"SOP_001_OperatingProcedures.pdf, RULE-ST01-03",RULE-ST01-03,IF PRS drop below 3.3 bar THEN inspect inlet valve within 5 min IN ST01_FILLING,"[3.3, 5.0]",[],True
+4,"SOP_001_OperatingProcedures.pdf, RULE-ST02-01",RULE-ST02-01,IF TMP between 175 and 195 °C THEN MUST be maintained IN ST02_SEALING,"[175.0, 195.0]",[],True
+5,"SOP_001_OperatingProcedures.pdf, RULE-ST02-02",RULE-ST02-02,"IF TMP > 210°C (hard limit) THEN emergency stop ST02, ST03, ST04 IN ST02_SEALING",[210.0],[],True
+6,"SOP_001_OperatingProcedures.pdf, RULE-ST02-03",RULE-ST02-03,IF CUR increase >1.5 A above nominal sustained >5 min THEN schedule maintenance IN ST02_SEALING,"[1.5, 5.0]",[],True
+7,"SOP_001_OperatingProcedures.pdf, RULE-ST02-04",RULE-ST02-04,IF CUR drift at ST02_SEALING THEN Monitor ST04_PACKAGING-SPD whenever ST02_SEALING-CUR triggers a WARNING.,[],[],True
+8,"SOP_001_OperatingProcedures.pdf, RULE-ST03-01",RULE-ST03-01,IF TEN between 1.8 and 2.6 N THEN MUST be maintained IN ST03_LABELLING,"[1.8, 2.6]",[],True
+9,"SOP_001_OperatingProcedures.pdf, RULE-ST03-02",RULE-ST03-02a; RULE-ST03-02b,IF CNT below 110 pcs/min THEN check for label jam IN ST03_LABELLING,[110.0],[],True
+10,"SOP_001_OperatingProcedures.pdf, RULE-ST03-02",RULE-ST03-02a; RULE-ST03-02b,IF CNT below 100 pcs/min (hard limit) THEN halt IN ST03_LABELLING,[100.0],[],True
+11,"SOP_001_OperatingProcedures.pdf, RULE-ST03-03",RULE-ST03-03,IF TEN STUCK >10 consecutive samples THEN sensor failure IN ST03_LABELLING,[10.0],[],True
+12,"SOP_001_OperatingProcedures.pdf, RULE-ST04-01",RULE-ST04-01,IF VIB > 0.20 mm/s (upper limit) THEN schedule maintenance within 24 h IN ST04_PACKAGING,"[0.2, 24.0]",[],True
+13,"SOP_001_OperatingProcedures.pdf, RULE-ST04-02",RULE-ST04-02,IF VIB > 0.35 mm/s (hard limit) THEN emergency stop; inspect bearings IN ST04_PACKAGING,[0.35],[],True
+14,"SOP_001_OperatingProcedures.pdf, RULE-ST04-03",RULE-ST04-03,IF SPD drops below 1.00 m/s without operator command THEN verify RULE-ST02-04 IN ST04_PACKAGING,[1.0],[],True
+15,"SOP_001_OperatingProcedures.pdf, RULE-SRV01-01",RULE-SRV01-01,IF TMP at most 25 °C (MUST NOT exceed) THEN MUST be maintained IN SRV01_SERVERROOM,[25.0],[],True
+16,"SOP_001_OperatingProcedures.pdf, RULE-SRV01-02",RULE-SRV01-02,IF TMP > 28°C (hard limit) THEN automatic controlled shutdown of all PLC nodes IN SRV01_SERVERROOM,[28.0],[],True
+17,"SOP_001_OperatingProcedures.pdf, RULE-WRH01-01",RULE-WRH01-01a; RULE-WRH01-01b,IF TMP between 0.5 and 8 °C THEN MUST be maintained IN WRH01_WAREHOUSE,"[0.5, 8.0]",[],True
+18,"SOP_001_OperatingProcedures.pdf, RULE-WRH01-01",RULE-WRH01-01a; RULE-WRH01-01b,IF TMP > 12°C (hard limit) THEN notify QC and quarantine batch IN WRH01_WAREHOUSE,[12.0],[],True
+19,"SOP_001_OperatingProcedures.pdf, RULE-WRH01-02",RULE-WRH01-02,IF HUM above 85%RH THEN inspect door seals and activate dehumidifier IN WRH01_WAREHOUSE,[85.0],[],True
+20,"SOP_001_OperatingProcedures.pdf, RULE-CHM01-01",RULE-CHM01-01a; RULE-CHM01-01b,IF TMP between 10 and 20 °C THEN MUST be maintained IN CHM01_CHEMICALSTORAGE,"[10.0, 20.0]",[],True
+21,"SOP_001_OperatingProcedures.pdf, RULE-CHM01-01",RULE-CHM01-01a; RULE-CHM01-01b,IF TMP > 25°C (hard limit) THEN activate emergency ventilation and notify safety officer immediately IN CHM01_CHEMICALSTORAGE,[25.0],[],True
+22,"SOP_001_OperatingProcedures.pdf, RULE-CHM01-02",RULE-CHM01-02a; RULE-CHM01-02b,IF HUM at most 50 %RH (MUST NOT exceed) THEN MUST be maintained IN CHM01_CHEMICALSTORAGE,[50.0],[],True
+23,"SOP_001_OperatingProcedures.pdf, RULE-CHM01-02",RULE-CHM01-02a; RULE-CHM01-02b,IF HUM >45%RH THEN activate desiccant system IN CHM01_CHEMICALSTORAGE,[45.0],[],True
+24,"SOP_001_OperatingProcedures.pdf, RULE-CHM01-03",RULE-CHM01-03,IF personnel without hazmat training (technician/supervisor/manager role) enter CHM01_CHEMICALSTORAGE THEN UNAUTHORIZED_ACCESS.,[],[],True
+25,"SOP_001_OperatingProcedures.pdf, RULE-CHM01-03",RULE-CHM01-03,IF CHM01_CHEMICALSTORAGE UNAUTHORIZED_ACCESS THEN escalate within 2 minutes.,[2.0],[],True
+26,"SOP_001_OperatingProcedures.pdf, RULE-RND01-01",RULE-RND01-01,IF TMP between 18 and 26 °C THEN MUST be maintained for experimental validity IN RND01_RDLAB,"[18.0, 26.0]",[],True
+27,"SOP_001_OperatingProcedures.pdf, RULE-RND01-02",RULE-RND01-02a; RULE-RND01-02b,IF HUM drift above 65%RH THEN activate dehumidifier IN RND01_RDLAB,[65.0],[],True
+28,"SOP_001_OperatingProcedures.pdf, RULE-RND01-02",RULE-RND01-02a; RULE-RND01-02b,IF HUM drift above 75%RH (hard limit) THEN suspend sensitive experiments and inspect HVAC system IN RND01_RDLAB,[75.0],[],True
+29,"SOP_001_OperatingProcedures.pdf, RULE-CAF01-01",RULE-CAF01-01,IF TMP above 26°C THEN check ventilation system IN CAF01_CAFETERIA,[26.0],[],True
+30,"SOP_001_OperatingProcedures.pdf, RULE-CAF01-02",RULE-CAF01-02,IF HUM above 70%RH THEN inspect drainage and activate ventilation IN CAF01_CAFETERIA,[70.0],[],True
+101,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST01-TMP-CRIT",RULE-THR-ST01-TMP-CRIT,IF TMP between 18 and 26°C THEN MUST be maintained IN ST01_FILLING,"[18.0, 26.0]",[],True
+102,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST01-TMP-CRIT",RULE-THR-ST01-TMP-CRIT,IF TMP > 30°C THEN inspect and notify maintenance IN ST01_FILLING,[30.0],[],True
+103,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST01-PRS-CRIT",RULE-THR-ST01-PRS-CRIT,IF PRS between 3.3 and 4.2 bar THEN MUST be maintained IN ST01_FILLING,"[3.3, 4.2]",[],True
+104,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST01-PRS-CRIT",RULE-THR-ST01-PRS-CRIT,IF PRS > 4.8 bar THEN inspect and notify maintenance IN ST01_FILLING,[4.8],[],True
+105,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST01-FLW-CRIT",RULE-THR-ST01-FLW-CRIT,IF FLW between 112 and 128 L/min THEN MUST be maintained IN ST01_FILLING,"[112.0, 128.0]",[],True
+106,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST01-FLW-CRIT",RULE-THR-ST01-FLW-CRIT,IF FLW > 135 L/min THEN inspect and notify maintenance IN ST01_FILLING,[135.0],[],True
+107,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST02-TMP-CRIT",RULE-THR-ST02-TMP-CRIT,IF TMP between 175 and 195°C THEN MUST be maintained IN ST02_SEALING,"[175.0, 195.0]",[],True
+108,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST02-TMP-CRIT",RULE-THR-ST02-TMP-CRIT,"IF TMP > 210°C THEN E-STOP ST02, ST03, ST04 and inspect element IN ST02_SEALING",[210.0],[],True
+109,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST02-PRS-CRIT",RULE-THR-ST02-PRS-CRIT,IF PRS between 4.6 and 5.7 bar THEN MUST be maintained IN ST02_SEALING,"[4.6, 5.7]",[],True
+110,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST02-PRS-CRIT",RULE-THR-ST02-PRS-CRIT,IF PRS > 6.2 bar THEN inspect and notify maintenance IN ST02_SEALING,[6.2],[],True
+111,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST02-CUR-CRIT",RULE-THR-ST02-CUR-CRIT,IF CUR between 11 and 13.5 A THEN MUST be maintained IN ST02_SEALING,"[11.0, 13.5]",[],True
+112,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST02-CUR-CRIT",RULE-THR-ST02-CUR-CRIT,"IF CUR > 15 A THEN E-STOP, inspect load and verify ST04 SPD IN ST02_SEALING",[15.0],[],True
+113,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST03-SPD-CRIT",RULE-THR-ST03-SPD-CRIT,IF SPD between 0.75 and 0.95 m/s THEN MUST be maintained IN ST03_LABELLING,"[0.75, 0.95]",[],True
+114,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST03-SPD-CRIT",RULE-THR-ST03-SPD-CRIT,IF SPD > 1.05 m/s THEN inspect and notify maintenance IN ST03_LABELLING,[1.05],[],True
+115,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST03-TEN-CRIT",RULE-THR-ST03-TEN-CRIT,IF TEN between 1.8 and 2.6 N THEN MUST be maintained IN ST03_LABELLING,"[1.8, 2.6]",[],True
+116,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST03-TEN-CRIT",RULE-THR-ST03-TEN-CRIT,IF TEN > 3 N THEN inspect and notify maintenance IN ST03_LABELLING,[3.0],[],True
+117,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST03-CNT-CRIT",RULE-THR-ST03-CNT-CRIT,IF CNT between 110 and 130 pcs/min THEN MUST be maintained IN ST03_LABELLING,"[110.0, 130.0]",[],True
+118,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST03-CNT-CRIT",RULE-THR-ST03-CNT-CRIT,IF CNT > 140 pcs/min THEN E-STOP labelling and inspect label path IN ST03_LABELLING,[140.0],[],True
+119,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST04-VIB-CRIT",RULE-THR-ST04-VIB-CRIT,IF VIB between 0.02 and 0.2 mm/s THEN MUST be maintained IN ST04_PACKAGING,"[0.02, 0.2]",[],True
+120,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST04-VIB-CRIT",RULE-THR-ST04-VIB-CRIT,IF VIB > 0.35 mm/s THEN E-STOP and inspect main bearing IN ST04_PACKAGING,[0.35],[],True
+121,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST04-CUR-CRIT",RULE-THR-ST04-CUR-CRIT,IF CUR between 7.5 and 9.8 A THEN MUST be maintained IN ST04_PACKAGING,"[7.5, 9.8]",[],True
+122,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST04-CUR-CRIT",RULE-THR-ST04-CUR-CRIT,IF CUR > 11 A THEN inspect and notify maintenance IN ST04_PACKAGING,[11.0],[],True
+123,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST04-SPD-CRIT",RULE-THR-ST04-SPD-CRIT,IF SPD between 1 and 1.4 m/s THEN MUST be maintained IN ST04_PACKAGING,"[1.0, 1.4]",[],True
+124,"SOP_002_AlarmThresholds.pdf, RULE-THR-ST04-SPD-CRIT",RULE-THR-ST04-SPD-CRIT,IF SPD > 1.6 m/s THEN inspect and notify maintenance IN ST04_PACKAGING,[1.6],[],True
+125,"SOP_002_AlarmThresholds.pdf, RULE-THR-SRV01-TMP-CRIT",RULE-THR-SRV01-TMP-CRIT,IF TMP between 18 and 25°C THEN MUST be maintained IN SRV01_SERVERROOM,"[18.0, 25.0]",[],True
+126,"SOP_002_AlarmThresholds.pdf, RULE-THR-SRV01-TMP-CRIT",RULE-THR-SRV01-TMP-CRIT,IF TMP > 28°C THEN activate backup cooling and prepare controlled PLC shutdown IN SRV01_SERVERROOM,[28.0],[],True
+127,"SOP_002_AlarmThresholds.pdf, RULE-THR-SRV01-HUM-CRIT",RULE-THR-SRV01-HUM-CRIT,IF HUM between 30 and 60%RH THEN MUST be maintained IN SRV01_SERVERROOM,"[30.0, 60.0]",[],True
+128,"SOP_002_AlarmThresholds.pdf, RULE-THR-SRV01-HUM-CRIT",RULE-THR-SRV01-HUM-CRIT,IF HUM > 70%RH THEN inspect and notify maintenance IN SRV01_SERVERROOM,[70.0],[],True
+129,"SOP_002_AlarmThresholds.pdf, RULE-THR-WRH01-TMP-CRIT",RULE-THR-WRH01-TMP-CRIT,IF TMP between 0.5 and 8°C THEN MUST be maintained IN WRH01_WAREHOUSE,"[0.5, 8.0]",[],True
+130,"SOP_002_AlarmThresholds.pdf, RULE-THR-WRH01-TMP-CRIT",RULE-THR-WRH01-TMP-CRIT,IF TMP > 12°C THEN activate backup refrigeration and notify QC IN WRH01_WAREHOUSE,[12.0],[],True
+131,"SOP_002_AlarmThresholds.pdf, RULE-THR-WRH01-HUM-CRIT",RULE-THR-WRH01-HUM-CRIT,IF HUM between 60 and 85%RH THEN MUST be maintained IN WRH01_WAREHOUSE,"[60.0, 85.0]",[],True
+132,"SOP_002_AlarmThresholds.pdf, RULE-THR-WRH01-HUM-CRIT",RULE-THR-WRH01-HUM-CRIT,IF HUM > 90%RH THEN inspect and notify maintenance IN WRH01_WAREHOUSE,[90.0],[],True
+133,"SOP_002_AlarmThresholds.pdf, RULE-THR-CHM01-TMP-CRIT",RULE-THR-CHM01-TMP-CRIT,IF TMP between 10 and 20°C THEN MUST be maintained IN CHM01_CHEMICALSTORAGE,"[10.0, 20.0]",[],True
+134,"SOP_002_AlarmThresholds.pdf, RULE-THR-CHM01-TMP-CRIT",RULE-THR-CHM01-TMP-CRIT,IF TMP > 25°C THEN activate emergency ventilation and notify safety officer immediately IN CHM01_CHEMICALSTORAGE,[25.0],[],True
+135,"SOP_002_AlarmThresholds.pdf, RULE-THR-CHM01-HUM-CRIT",RULE-THR-CHM01-HUM-CRIT,IF HUM between 20 and 50%RH THEN MUST be maintained IN CHM01_CHEMICALSTORAGE,"[20.0, 50.0]",[],True
+136,"SOP_002_AlarmThresholds.pdf, RULE-THR-CHM01-HUM-CRIT",RULE-THR-CHM01-HUM-CRIT,IF HUM > 60%RH THEN activate desiccant system and inspect storage containers for leaks IN CHM01_CHEMICALSTORAGE,[60.0],[],True
+137,"SOP_002_AlarmThresholds.pdf, RULE-THR-RND01-TMP-CRIT",RULE-THR-RND01-TMP-CRIT,IF TMP between 18 and 26°C THEN MUST be maintained IN RND01_RDLAB,"[18.0, 26.0]",[],True
+138,"SOP_002_AlarmThresholds.pdf, RULE-THR-RND01-TMP-CRIT",RULE-THR-RND01-TMP-CRIT,IF TMP > 30°C THEN inspect and notify maintenance IN RND01_RDLAB,[30.0],[],True
+139,"SOP_002_AlarmThresholds.pdf, RULE-THR-RND01-HUM-CRIT",RULE-THR-RND01-HUM-CRIT,IF HUM between 35 and 65%RH THEN MUST be maintained IN RND01_RDLAB,"[35.0, 65.0]",[],True
+140,"SOP_002_AlarmThresholds.pdf, RULE-THR-RND01-HUM-CRIT",RULE-THR-RND01-HUM-CRIT,IF HUM > 75%RH THEN suspend experiments and inspect HVAC system IN RND01_RDLAB,[75.0],[],True
+141,"SOP_002_AlarmThresholds.pdf, RULE-THR-CAF01-TMP-CRIT",RULE-THR-CAF01-TMP-CRIT,IF TMP between 17 and 26°C THEN MUST be maintained IN CAF01_CAFETERIA,"[17.0, 26.0]",[],True
+142,"SOP_002_AlarmThresholds.pdf, RULE-THR-CAF01-TMP-CRIT",RULE-THR-CAF01-TMP-CRIT,IF TMP > 30°C THEN inspect and notify maintenance IN CAF01_CAFETERIA,[30.0],[],True
+143,"SOP_002_AlarmThresholds.pdf, RULE-THR-CAF01-HUM-CRIT",RULE-THR-CAF01-HUM-CRIT,IF HUM between 35 and 70%RH THEN MUST be maintained IN CAF01_CAFETERIA,"[35.0, 70.0]",[],True
+144,"SOP_002_AlarmThresholds.pdf, RULE-THR-CAF01-HUM-CRIT",RULE-THR-CAF01-HUM-CRIT,IF HUM > 80%RH THEN inspect and notify maintenance IN CAF01_CAFETERIA,[80.0],[],True
+145,"SOP_002_AlarmThresholds.pdf, RULE-ANOM-SPIKE",RULE-ANOM-SPIKE,IF a reading deviates more than 3 sigma for less than 5 min THEN AnomalyEvent::Spike.,"[3.0, 5.0]",[],True
+146,"SOP_002_AlarmThresholds.pdf, RULE-ANOM-DRIFT",RULE-ANOM-DRIFT,IF a reading deviates monotonically for more than 15 min THEN AnomalyEvent::Drift.,[15.0],[],True
+147,"SOP_002_AlarmThresholds.pdf, RULE-ANOM-STUCK",RULE-ANOM-STUCK,IF a reading is unchanged for more than 10 consecutive readings THEN AnomalyEvent::StuckSensor.,[10.0],[],True
+148,"SOP_002_AlarmThresholds.pdf, RULE-ANOM-OUT_OF_RANGE",RULE-ANOM-OUT_OF_RANGE,IF a reading exceeds WARN for more than 10 min THEN AnomalyEvent::OutOfRange.,[10.0],[],True
+149,"SOP_002_AlarmThresholds.pdf, RULE-ANOM-CORRELATED",RULE-ANOM-CORRELATED,IF an anomaly onset occurs within 90 min of a cause in another station THEN AnomalyEvent::Correlated.,[90.0],[],True
+150,"SOP_003_MaintenanceRules.pdf, MAINT-01",MAINT-01,IF VIB DRIFT > 0.05 mm/s over 60 min THEN inspect and lubricate bearing IN ST04_PACKAGING,"[0.05, 60.0]",[],True
+151,"SOP_003_MaintenanceRules.pdf, MAINT-02",MAINT-02,IF CUR DRIFT > 1.0 A for more than 30 min THEN inspect sealing jaw IN ST02_SEALING,"[1.0, 30.0]",[],True
+152,"SOP_003_MaintenanceRules.pdf, MAINT-03",MAINT-03,IF TEN STUCK > 10 samples THEN replace sensor IN ST03_LABELLING,[10.0],[],True
+153,"SOP_003_MaintenanceRules.pdf, MAINT-04",MAINT-04,IF PRS < 3.3 bar for more than 15 min THEN inspect filter and pump IN ST01_FILLING,"[3.3, 15.0]",[],True
+154,"SOP_003_MaintenanceRules.pdf, MAINT-05",MAINT-05,IF TMP > 25°C for more than 5 min THEN activate secondary cooling IN SRV01_SERVERROOM,"[5.0, 25.0]",[],True
+155,"SOP_003_MaintenanceRules.pdf, MAINT-06",MAINT-06,IF TMP DRIFT > 2°C over 2 h THEN inspect compressor and notify QC IN WRH01_WAREHOUSE,[2.0],[],True
+156,"SOP_003_MaintenanceRules.pdf, MAINT-07",MAINT-07,IF TMP > 20°C for more than 10 min THEN activate emergency ventilation and notify safety officer IN CHM01_CHEMICALSTORAGE,"[10.0, 20.0]",[],True
+157,"SOP_003_MaintenanceRules.pdf, MAINT-08",MAINT-08,IF HUM DRIFT > 10%RH over 60 min THEN activate dehumidifier and check HVAC drain IN RND01_RDLAB,"[10.0, 60.0]",[],True
+158,"SOP_003_MaintenanceRules.pdf, RULE-CORR-01",RULE-CORR-01,IF ST02_SEALING-CUR increases THEN ST04_PACKAGING-SPD decreases.,[],[],True
+159,"SOP_003_MaintenanceRules.pdf, RULE-CORR-01",RULE-CORR-01,"IF ST04_PACKAGING-SPD decreases after ST02_SEALING-CUR increases THEN verify ST02-CUR trend, inspect sealing jaw and reset ST04 speed setpoint.",[],[],True
+160,"SOP_003_MaintenanceRules.pdf, RULE-CORR-02",RULE-CORR-02,IF SRV01-TMP increases THEN SCADA latency increases.,[],[],True
+161,"SOP_003_MaintenanceRules.pdf, RULE-CORR-02",RULE-CORR-02,IF SCADA latency increases THEN apparent STUCK readings occur.,[],[],True
+162,"SOP_003_MaintenanceRules.pdf, RULE-CORR-02",RULE-CORR-02,"IF apparent STUCK readings occur after SRV01-TMP increases THEN reduce SRV01-TMP below 25°C, verify PLC heartbeats and clear STUCK alarms.",[25.0],[],True
+163,"SOP_003_MaintenanceRules.pdf, RULE-CORR-03",RULE-CORR-03,IF WRH01-TMP increases THEN product quality risk occurs.,[],[],True
+164,"SOP_003_MaintenanceRules.pdf, RULE-CORR-03",RULE-CORR-03,"IF WRH01-TMP increases THEN restore WRH01-TMP below 8°C, notify QC and place batch on HOLD in ERP.",[8.0],[],True
+172,"SOP_004_PersonnelZoneAccess.pdf, RULE-OCC-PROD",RULE-OCC-PROD,IF OCC > 10 persons THEN WARNING alarm IN PRODUCTION_AREA,[10.0],[],True
+173,"SOP_004_PersonnelZoneAccess.pdf, RULE-OCC-PROD",RULE-OCC-PROD,IF OCC > 12 persons THEN CRITICAL alarm IN PRODUCTION_AREA,[12.0],[],True
+174,"SOP_004_PersonnelZoneAccess.pdf, RULE-OCC-SRV",RULE-OCC-SRV,IF OCC > 2 persons THEN CRITICAL alarm IN SERVER_ROOM,[2.0],[],True
+175,"SOP_004_PersonnelZoneAccess.pdf, RULE-OCC-WRH",RULE-OCC-WRH,IF OCC > 3 persons THEN WARNING alarm IN GENERAL_WAREHOUSE,[3.0],[],True
+176,"SOP_004_PersonnelZoneAccess.pdf, RULE-OCC-CHM",RULE-OCC-CHM,IF OCC > 4 persons THEN CRITICAL alarm IN CHEMICAL_STORAGE,[4.0],[],True
+177,"SOP_004_PersonnelZoneAccess.pdf, RULE-OCC-RND",RULE-OCC-RND,IF OCC > 5 persons THEN WARNING alarm IN RND_LAB,[5.0],[],True
+178,"SOP_004_PersonnelZoneAccess.pdf, RULE-ACCESS-01",RULE-ACCESS-01,"IF an unauthorised role enters a zone THEN log OccupancyEvent::UnauthorisedAccess with person_id, zone and timestamp.",[],[],True
+179,"SOP_004_PersonnelZoneAccess.pdf, RULE-ACCESS-02",RULE-ACCESS-02,IF unauthorised access is detected THEN security personnel are notified within 2 minutes.,[2.0],[],True
+180,"SOP_004_PersonnelZoneAccess.pdf, RULE-ACCESS-03",RULE-ACCESS-03,IF OccupancyEvent::UnauthorisedAccess is created THEN the KG node includes authorized=NO and a reference to RULE-ACCESS-03.,[],[],True
+181,"SOP_004_PersonnelZoneAccess.pdf, RULE-ACCESS-04",RULE-ACCESS-04,IF UNAUTHORIZED_ACCESS occurs in Chemical Storage THEN escalate immediately to the Safety Officer regardless of role.,[],[],True
+182,"SOP_004_PersonnelZoneAccess.pdf, RULE-ACK-OP-WARN",RULE-ACK-OP-WARN,IF operator receives a WARNING alarm THEN MUST acknowledge within 15 min IN ALARM_MANAGEMENT,[15.0],[],True
+183,"SOP_004_PersonnelZoneAccess.pdf, RULE-ACK-OP-CRIT",RULE-ACK-OP-CRIT,IF operator receives a CRITICAL alarm THEN MUST acknowledge within 3 min IN ALARM_MANAGEMENT,[3.0],[],True
+185,"SOP_004_PersonnelZoneAccess.pdf, RULE-ACK-TECH-CRIT",RULE-ACK-TECH-CRIT,IF technician receives a CRITICAL alarm THEN MUST acknowledge within 2 min IN ALARM_MANAGEMENT,[2.0],[],True
+186,"SOP_004_PersonnelZoneAccess.pdf, RULE-ACK-SUP-WARN",RULE-ACK-SUP-WARN,IF supervisor receives a WARNING alarm THEN MUST acknowledge within 5 min IN ALARM_MANAGEMENT,[5.0],[],True
+187,"SOP_004_PersonnelZoneAccess.pdf, RULE-ACK-SUP-CRIT",RULE-ACK-SUP-CRIT,IF supervisor receives a CRITICAL alarm THEN MUST acknowledge within 1 min IN ALARM_MANAGEMENT,[1.0],[],True
+188,"SOP_004_PersonnelZoneAccess.pdf, RULE-ACK-MAN-WARN",RULE-ACK-MAN-WARN,IF manager receives a WARNING alarm THEN MUST acknowledge within 15 min IN ALARM_MANAGEMENT,[15.0],[],True
+189,"SOP_004_PersonnelZoneAccess.pdf, RULE-ACK-MAN-CRIT",RULE-ACK-MAN-CRIT,IF manager receives a CRITICAL alarm THEN MUST acknowledge within 5 min IN ALARM_MANAGEMENT,[5.0],[],True
+190,"SOP_004_PersonnelZoneAccess.pdf, RULE-ACK-SEC-WARN",RULE-ACK-SEC-WARN,IF security receives a WARNING alarm THEN MUST acknowledge within 20 min IN ALARM_MANAGEMENT,[20.0],[],True
+191,"SOP_004_PersonnelZoneAccess.pdf, RULE-ACK-SEC-CRIT",RULE-ACK-SEC-CRIT,IF security receives a CRITICAL alarm THEN MUST acknowledge within 5 min IN ALARM_MANAGEMENT,[5.0],[],True
