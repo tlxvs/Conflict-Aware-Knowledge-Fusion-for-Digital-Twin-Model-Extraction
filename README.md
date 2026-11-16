@@ -77,4 +77,10 @@ For questions and feedback, feel free to contact me.
 
 ## References
 
-[1] iMAKS dataset: Bernardini, A. (2026). iMAKS (industrial ModulAr Knowledge extraction Synthetic dataset) [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.20075430
+[1] iMAKS dataset:
+    Bernardini, A.: iMAKS (industrial ModulAr Knowledge extraction Synthetic dataset), https://zenodo.org/doi/10.5281/zenodo.20075430, (2026). https://doi.org/10.5281/ZENODO.20075430.
+
+[2] Data-Knowledge-Fused Model Extraction Pipeline: 
+    Jungmann, M., Lazarova-Molnar, S.: Benchmarking Text Classification Approaches for Expert Knowledge Integration in Petri Net-Based Digital Twin Models. In: 12th.  Federa-tion of European Simulation Societies Conference, (Eurosim 2026) (2026).
+
+
