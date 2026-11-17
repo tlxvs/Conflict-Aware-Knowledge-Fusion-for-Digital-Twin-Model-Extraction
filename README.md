@@ -1,18 +1,17 @@
 # Conflict Detection and Resolution Recommendations for Expert Knowledge in Digital Twin Model Extraction
 
-This repository contains a **validation layer** that detects contradictions between expert knowledge statements and recommends resolutions as decision-support for human reviewers before the knowledge is used for Digital Twin (DT) model extraction. Only resolved knowledge enters the final data-knowledge-fused model.
+This repository contains a **conflict handling module** that detects contradictions between expert knowledge statements and recommends resolutions as decision-support for human reviewers before the knowledge is used for Digital Twin (DT) model extraction. The conflict handling module is embedded in a model extraction pipeline that builds SPN models from IoT data and expert knowledge.Only resolved knowledge enters the final DT model.
 
-The validation layer is embedded in an existing model extraction pipeline that builds SPN models from IoT data and expert knowledge in unstructured natural language.
 
 ## Key Features
 
-- **Hybrid conflict detection** on formalized production rules (`IF condition THEN outcome (IN scope)`), combining:
+- **Hybrid conflict detection** on formalized production rules (`IF condition THEN outcome (IN scope)`), utilizing:
   - deterministic lexical checks (identity, negation, explicit exclusiveness such as "only" or "must not exceed"),
   - numerical constraint solving with the Z3 SMT solver,
   - semantic similarity with Sentence-BERT,
   - natural language inference (NLI) with a fine-tuned DeBERTa-v3 model where deterministic checks are inconclusive.
-- **Anomaly taxonomy**: Diverging Outcome, Diverging Precondition, Internal Inconsistency, and Valid Discrepancies (incl. duplicates and subsumptions).
-- **Conflict rating**: *Conflict*, *Potential conflict*, and *Observation*, assigned per knowledge type to distinguish logical contradictions from legitimate branching.
+- **Anomaly taxonomy**: Diverging Outcome, Diverging Condition, Internal Inconsistency.
+- **Conflict rating**: *Conflict*, *Potential conflict*, and *Observation*, assigned per knowledge type to distinguish logical contradictions from legitimate branching and parallelism.
 - **Traceable annotation** of each statement with its counterpart IDs, anomaly category, conflict rating, evidence, and NLI scores.
 - **Conflict visualization in the SPN**: flagged components are drawn dashed with color-coded annotation boxes per conflict cluster and are excluded from simulation until resolved.
 - **Resolution recommendations** as human-in-the-loop decision-support: conflicting rules are clustered, split into maximal compatible camps, and ranked by previous expert decisions, IoT log overlap, source corroboration, specificity, and number of findings. The reviewer accepts, rejects, or defers camps or rules.
@@ -30,7 +29,7 @@ python main.py                   # 3. run the pipeline incl. the validation laye
 
 Running `main.py` executes the full pipeline on the case study data of the paper. After conflicts are detected and resolution recommendations are computed by the algorithm, a review interface opens in which the user can resolve the flagged conflict clusters before the final model is extracted.
 
-The validation layer is located in the folder `statement_conflict_detection_and_resolution`. To use the validation functionality independently do:
+The conflict handling module is located in the folder `statement_conflict_detection_and_resolution`. To use the conflict handling module functionality independently do:
 
 ```bash
 cd statement_conflict_detection_and_resolution      # 1. navigate into the folder
@@ -52,8 +51,8 @@ python ablation.py # 3. run the ablation
 
 The case study has two inputs located in `input_data`:
 
-1. **Expert knowledge** rules extracted from the iMAKS documents.
-2. **IoT data** from the iMAKS data.
+1. **Expert knowledge** rules extracted from the iMAKS dataset SOP and DS documents.
+2. **IoT data** from the iMAKS dataset timeseries_annotated.
 
 ## Output
 
@@ -65,22 +64,10 @@ Results are saved in the `output` folder:
 - results of the expert knowledge processing step (classification and formalization), if run from natural language.
 - extracted data-driven and data-knowledge-fused models
 
-## Underlying Model Extraction Pipeline
-
-In the a posteriori strategy, the pipeline first processes IoT data and expert knowledge separately. It then extracts an SPN in a data-driven manner from the IoT data and integrates expert knowledge as differentiated model components, producing a data-knowledge-fused model. The validation layer runs on the formalized expert knowledge before this integration step. Visualization is based on an adapted version of pyspn.
-
 ## Usage & Attribution
 
 If you use this tool in a scientific project, please cite: [publication placeholder]
 
 For questions and feedback, feel free to contact me.
-
-## References
-
-[1] iMAKS dataset:
-    Bernardini, A.: iMAKS (industrial ModulAr Knowledge extraction Synthetic dataset), https://zenodo.org/doi/10.5281/zenodo.20075430, (2026). https://doi.org/10.5281/ZENODO.20075430.
-
-[2] Data-Knowledge-Fused Model Extraction Pipeline: 
-    Jungmann, M., Lazarova-Molnar, S.: Benchmarking Text Classification Approaches for Expert Knowledge Integration in Petri Net-Based Digital Twin Models. In: 12th.  Federa-tion of European Simulation Societies Conference, (Eurosim 2026) (2026).
 
 
