@@ -56,12 +56,16 @@ The case study has two inputs located in `input_data`:
 
 ## Output
 
-Results are saved in the `output` folder:
+- Conflict detection results per statement (anomaly category, severity, counterparts, evidence),
+- Conflict clusters, camps and resolution recommendations
+- User interface as decision-support for human review
+- The extracted Stochastic Petri Net with visualized conflicts and the resolved DT model (`.gv`, `.png`, `.pdf`),
 
-- conflict detection results per statement (anomaly category, severity, counterparts, evidence),
-- conflict clusters, camps and resolution recommendations
-- user interface as decision-support for human review
-- the extracted SPN with visualized conflicts and the resolved DT model (`.gv`, `.png`, `.pdf`),
+
+The following results are saved in the `output` folder:
+
+- The extracted Stochastic Petri Net with visualized conflicts 
+- The extracted Stochastic Petri Net DT model with resolved conflicts after human review (`.gv`, `.png`, `.pdf`),
 
 
 ## Usage & Attribution
