@@ -59,10 +59,10 @@ The case study has two inputs located in `input_data`:
 Results are saved in the `output` folder:
 
 - conflict detection results per statement (anomaly category, severity, counterparts, evidence),
-- conflict clusters, camps, recommendations, and stored expert decisions,
-- the extracted SPN with visualized conflicts and the resolved data-knowledge-fused model (`.gv`, `.png`, `.pdf`),
-- results of the expert knowledge processing step (classification and formalization), if run from natural language.
-- extracted data-driven and data-knowledge-fused models
+- conflict clusters, camps and resolution recommendations
+- user interface as decision-support for human review
+- the extracted SPN with visualized conflicts and the resolved DT model (`.gv`, `.png`, `.pdf`),
+
 
 ## Usage & Attribution
 
