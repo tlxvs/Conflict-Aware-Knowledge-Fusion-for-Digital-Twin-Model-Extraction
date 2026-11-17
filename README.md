@@ -68,6 +68,6 @@ Results are saved in the `output` folder:
 
 If you use this tool in a scientific project, please cite: [publication placeholder]
 
-For questions and feedback, feel free to contact me.
+For questions and feedback, feel free to reach out.
 
 
